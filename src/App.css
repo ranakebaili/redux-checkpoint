@@ -1,0 +1,110 @@
+
+/* Container styling */
+.all {
+    display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+  
+  /* Input styling */
+  .addtsk input {
+    padding: 8px;
+    margin-right: 5px;
+    height: 20px;
+    width: 500px;
+  }
+    .btnAdd {
+    padding: 8px;
+    cursor: pointer;
+    background-color: #428bca;
+    color: white;
+    border: none;
+    height: 38px;
+    width: 80px;
+  }
+  .addtsk{
+    display: flex;
+  justify-content: center;
+  }
+  /* Task list styling */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Individual task item styling */
+  li {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Edit mode styling */
+  li div input {
+    width: 70%;
+    padding: 8px;
+    margin-right: 10px;
+  }
+  
+  /* Button styling */
+  button {
+    margin-left: 5px;
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  /* Done/Undo button styling */
+  button.done {
+    background-color: #5cb85c; 
+    color: white;
+    border: none;
+    margin-left: 50px;
+  }
+  
+  button.undo {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    margin-left: 50px;
+
+  }
+  
+  /* Delete button styling */
+  button.delete {
+    background-color: #f44336; 
+    color: white;
+    border: none;
+  }
+  
+  /* Edit button styling */
+  button.edit {
+    background-color: #428bca; 
+    color: white;
+    border: none;
+  }
+  .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+  
+  /* Description styling */
+  .task > div:first-child {
+    flex-grow: 1;
+  }
+  
+  /* Button container styling */
+  .buttons {
+    display: flex;
+    align-items: center;
+  }  
+  h1{
+    text-align: center;
+  }
