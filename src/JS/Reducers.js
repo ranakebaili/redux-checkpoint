@@ -7,6 +7,11 @@ const initialState = {
       id: 1,
       description: 'task1',
       isDone: false,
+    },
+    {
+      id: 2,
+      description: 'eezdjhzbeduhzebucdbezucybezycbeyzfoi',
+      isDone: false,
     }
   ]
 }

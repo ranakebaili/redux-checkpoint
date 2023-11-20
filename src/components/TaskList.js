@@ -8,6 +8,7 @@ const ListTask = () => {
   const dispatch = useDispatch();
   const [editDescription, setEditDescription] = useState('');
   const [editMode, setEditMode] = useState(null);
+  const [filterStatus, setFilterStatus] = useState('all'); 
 
   const doneUndone = (id) => {
     dispatch(taskIsDone(id));
@@ -27,10 +28,27 @@ const ListTask = () => {
     setEditMode(null);
   };
 
+  const filteredTasks = tasks.filter((task) => {
+    if (filterStatus === 'done') {
+      return task.isDone;
+    } else if (filterStatus === 'undone') {
+      return !task.isDone;
+    } else {
+      return true; 
+    }
+  });
+
   return (
-    <div className='all'>
-      <ul>
-        {tasks.map((task) => (
+    <div>
+      {}
+      <div  className='all1'>
+        <button className='btttn' onClick={() => setFilterStatus('done')}>Show Done</button>
+        <button className='btttn' onClick={() => setFilterStatus('undone')}>Show Undone</button>
+        <button className='btttn' onClick={() => setFilterStatus('all')}>Show All</button>
+      </div>
+
+      <ul  className='all2'>
+        {filteredTasks.map((task) => (
           <li key={task.id} style={{ color: task.isDone ? 'lightgray' : 'black' }}>
             {editMode === task.id ? (
               <div>
@@ -46,11 +64,11 @@ const ListTask = () => {
                 <div>{task.description}</div>
                 
                 <div className='buttons'>
-                <button className={task.isDone ? 'undo' : 'done'} onClick={() => doneUndone(task.id)}>
+                  <button className={task.isDone ? 'undo' : 'done'} onClick={() => doneUndone(task.id)}>
                     {task.isDone ? 'Undo' : 'Done'}
                   </button>
-                    <button className='delete' onClick={() => deleteTaskItem(task.id)}>Delete</button>
-                    <button className='edit' onClick={() => enableEditMode(task.id, task.description)}>Edit</button>
+                  <button className='delete' onClick={() => deleteTaskItem(task.id)}>Delete</button>
+                  <button className='edit' onClick={() => enableEditMode(task.id, task.description)}>Edit</button>
                 </div>
               </div>
             )}
